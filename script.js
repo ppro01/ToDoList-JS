@@ -50,7 +50,7 @@ function Add() {
     let itemClosest = divClosest.closest(".Item1");
     itemClosest.classList.add("editando");
     let pClosest = document.querySelector(".editando > p");
-    let teste = prompt("Digita alguma porra ai");
+    let teste = prompt("Digita a nova tarefa:");
 
     if (teste) {
       pClosest.innerText = teste;
