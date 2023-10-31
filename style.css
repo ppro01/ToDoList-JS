@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Outfit:wght@200;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+.Header > p {
+  font-size: 3.2rem;
+  color: #fff;
+}
+.Item1 > p {
+  font-size: 1rem;
+  color: #000;
+}
+.Header {
+  display: flex;
+  width: 100%;
+  height: 15%;
+  background-color: rgb(206, 90, 103);
+  justify-content: center;
+  align-items: center;
+}
+.ContentWrapper {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(244, 191, 150);
+  z-index: 1;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.Bar {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+input,
+.add {
+  border: none;
+
+  outline: none;
+  height: 34px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 14px;
+  right: 9px;
+  border-radius: 10px;
+  width: 400px;
+  box-sizing: border-box;
+  padding: 0px 18px;
+}
+.add {
+  background: rgb(31, 23, 23);
+  color: #fff;
+  width: 100px;
+  cursor: pointer;
+}
+
+.Items {
+  display: flex;
+  width: 75%;
+  height: 65%;
+  z-index: 1;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 10px 10px 0 0;
+}
+.Item1 {
+  min-height: 15vh;
+  width: 80%;
+  background-color: rgb(252, 245, 237);
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem 0 1.5rem;
+  border-radius: 10px;
+  contain: content;
+  transition: all ease-in-out 0.2s;
+}
+.Item1.Feito {
+  background-color: green;
+}
+.Item1.Feito > p {
+  text-decoration: line-through;
+}
+.Item1:hover {
+  cursor: pointer;
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px 10px rgba(233, 135, 135, 0.434);
+}
+.exluir,
+.editar {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+body {
+  background-color: rgb(244, 191, 150);
+}
