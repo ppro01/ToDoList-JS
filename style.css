@@ -92,6 +92,7 @@ input,
 }
 .Item1.Feito > p {
   text-decoration: line-through;
+  color: #fff;
 }
 .Item1:hover {
   cursor: pointer;
