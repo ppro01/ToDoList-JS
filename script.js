@@ -1,14 +1,29 @@
-let index = 0;
-function Add() {
-  index++;
-  const Info = document.querySelector("#task");
+const posicao = document.querySelector(".Items");
+const Info = document.querySelector("#task");
+const button = document.querySelector(".add");
 
-  const Filho = document.createElement("div");
-  Filho.classList.add("Item1");
+button.addEventListener("click", function () {
+  var task = createTask();
+  addTask(task);
+  clearInput();
+});
+Info.addEventListener("keypress", (e) => {
+  if (e.code == "Enter") {
+    var task = createTask();
+    addTask(task);
+    clearInput();
+  } else {
+    return null;
+  }
+});
+
+function createTask() {
+  const createdTask = document.createElement("div");
+  createdTask.classList.add("Item1");
 
   const conteudo = document.createElement("p");
   conteudo.innerText = Info.value;
-  Filho.appendChild(conteudo);
+  createdTask.appendChild(conteudo);
 
   const separador = document.createElement("div");
 
@@ -22,26 +37,22 @@ function Add() {
   btnEdit.classList.add("editar");
   separador.appendChild(btnEdit);
 
-  Filho.appendChild(separador);
+  createdTask.appendChild(separador);
 
-  const posicao = document.querySelector(".Items");
-  posicao.appendChild(Filho);
-  Info.value = "";
-
-  Filho.addEventListener("click", (e) => {
-    let Filhotarget = e.target;
-    if (Filhotarget.classList.contains("Feito")) {
-      Filhotarget.classList.remove("Feito");
+  createdTask.addEventListener("click", (e) => {
+    let createdTaskTarget = e.target;
+    if (createdTaskTarget.classList.contains("Feito")) {
+      createdTaskTarget.classList.remove("Feito");
     } else {
-      Filhotarget.classList.add("Feito");
+      createdTaskTarget.classList.add("Feito");
     }
   });
 
   btnExcluir.addEventListener(
     "click",
     function () {
-      posicao.removeChild(Filho);
-    }.bind(Filho)
+      posicao.removeChild(createdTask);
+    }.bind(createdTask)
   );
 
   btnEdit.addEventListener("click", (e) => {
@@ -59,4 +70,13 @@ function Add() {
       itemClosest.classList.remove("editando");
     }
   });
+  return createdTask;
+}
+
+function addTask(task) {
+  posicao.appendChild(task);
+}
+
+function clearInput() {
+  Info.value = "";
 }
