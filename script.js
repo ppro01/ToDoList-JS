@@ -3,15 +3,23 @@ const Info = document.querySelector("#task");
 const button = document.querySelector(".add");
 
 button.addEventListener("click", function () {
-  var task = createTask();
-  addTask(task);
-  clearInput();
-});
-Info.addEventListener("keypress", (e) => {
-  if (e.code == "Enter") {
+  if (Info.value != "") {
     var task = createTask();
     addTask(task);
     clearInput();
+  } else {
+    alert("campo vazio");
+  }
+});
+Info.addEventListener("keypress", (e) => {
+  if (e.code == "Enter") {
+    if (Info.value != "") {
+      var task = createTask();
+      addTask(task);
+      clearInput();
+    } else {
+      alert("campo vazio");
+    }
   } else {
     return null;
   }
